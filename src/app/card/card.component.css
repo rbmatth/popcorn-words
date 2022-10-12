@@ -1,0 +1,16 @@
+#word {
+  font-size: 25vmin;
+  font-weight: 700;
+}
+
+#cursor {
+  position: absolute;
+  bottom: 1vmin;
+  right: 0vmin;
+  font-size: 5vmin;
+  opacity: 0.5;
+}
+
+#done {
+  font-size: 75vmin;
+}

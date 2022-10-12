@@ -1,0 +1,11 @@
+<div class="d-flex flex-column h-100">
+    <div class="user-select-none flex-fill position-relative" *ngIf="length" (click)="getNextWord()">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <div id="word" *ngIf="word else done">{{word}}</div>
+            <ng-template #done>
+                <i id="done" class="fa fa-check-circle text-success"></i>
+            </ng-template>
+        </div>
+        <div id="cursor" class="" *ngIf="cursor <= length">{{cursor}} / {{length}}</div>
+    </div>
+</div>
