@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
 import { firstValueFrom, Observable } from 'rxjs';
@@ -14,8 +14,8 @@ export class WordService {
   cursor!: number;
   method: Method = Method.RANDOM;
 
-  constructor(private http: HttpClient) {
-    this.observable = this.http.get(APP_BASE_HREF + '/assets/words.txt', {
+  constructor(@Inject(APP_BASE_HREF) baseHref: string, private http: HttpClient, ) {
+    this.observable = this.http.get(baseHref + '/assets/words.txt', {
       responseType: 'text',
     });
     this.observable.subscribe((file: string) => {
